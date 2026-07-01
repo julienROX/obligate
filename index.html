@@ -491,7 +491,7 @@ function renderReserves(){
         <button class="add" data-act="addPt" data-ri="${ri}">+ point</button></div>
       <div class="ovr"><button class="toggle${r.override.on?' on':''}" data-act="ovr" data-ri="${ri}">${r.override.on?'override ON':'override OFF'}</button>
         <label>utilization</label><input type="range" min="0" max="100" step="1" data-p="reserves.${ri}.override.u" ${r.override.on?'':'disabled'} style="flex:1">
-        <span class="mono" data-ovr="${ri}" style="width:38px;text-align:right">${r.override.u}%</span></div>`;
+        <input class="f num mono" data-p="reserves.${ri}.override.u" inputmode="decimal" style="width:44px;text-align:right"><span class="suf" style="font-size:11px;color:var(--faint)">%</span></div>`;
     }
     const card=el(`<div class="res"></div>`);
     card.innerHTML=`
