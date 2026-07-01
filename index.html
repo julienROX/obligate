@@ -53,8 +53,8 @@
   select.live,input.live{font:inherit;font-size:13px;color:inherit;background:var(--surface-2);border:1px solid var(--line-2);border-radius:var(--r);padding:6px 8px;max-width:280px}
   .live-stat{font-size:12px;color:var(--muted);margin-left:auto}.live-stat.err{color:var(--bad)}.live-stat.ok{color:var(--ok)}
 
-  .vault{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px;margin-top:14px}
-  .vault-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.vault-nm{font-size:17px;font-weight:600}
+  .mkt{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px;margin-top:14px}
+  .mkt-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.mkt-nm{font-size:17px;font-weight:600}
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}@media(max-width:680px){.kpis{grid-template-columns:repeat(2,1fr)}}
   .kpi{background:var(--surface-2);border-radius:var(--r);padding:11px 13px}
   .kpi .l{font-size:11px;letter-spacing:.03em;text-transform:uppercase;color:var(--faint);font-weight:500}
@@ -74,9 +74,11 @@
   .badge{font-size:9px;letter-spacing:.02em;padding:1px 6px;border-radius:20px;font-weight:600}
   .badge.b{background:var(--accent);color:#fff}.badge.c{background:var(--mut-bg);color:var(--muted)}
   .badge.live{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok)}
-  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
   .fld{display:flex;flex-direction:column;gap:2px}
   .fld label{font-size:10px;text-transform:uppercase;letter-spacing:.02em;color:var(--faint);font-weight:500}
+  .fld input,.fld select{font:inherit;color:inherit;background:var(--surface-2);border:1px solid var(--line-2);border-radius:6px;padding:4px 6px;width:100%;text-align:right}
+  .fld.t input{text-align:left}
   .irm-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:12px;align-items:start}@media(max-width:560px){.irm-grid{grid-template-columns:1fr}}
   table.pts{width:100%;border-collapse:collapse;font-size:12.5px}
   table.pts th{font-size:10px;text-transform:uppercase;color:var(--faint);font-weight:500;padding:2px 4px;text-align:right}
@@ -109,34 +111,30 @@
   .add{font:inherit;font-size:12px;color:var(--accent);background:transparent;border:1px dashed var(--line-2);border-radius:var(--r);padding:5px 10px;cursor:pointer;margin:6px 0 2px}.add:hover{border-color:var(--accent);background:var(--focus)}
   .note-row{font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:10px}.note-row b{color:var(--ink);font-weight:500}
 
-  /* curator designer */
-  .chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-  .chip{font:inherit;font-size:12.5px;padding:5px 11px;border-radius:20px;border:1px solid var(--line-2);background:var(--surface);color:var(--muted);cursor:pointer}
-  .chip.on{background:var(--core-bg);color:var(--core-ink);border-color:var(--accent);font-weight:600}
-  .ux{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:880px){.ux{grid-template-columns:1fr}}
+  /* designer */
   .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:15px 17px}
   .card h4{margin:0 0 3px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
   .card .cap{font-size:11.5px;color:var(--muted);margin:0 0 12px}
-  .stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-top:1px solid var(--line)}
-  .stat-row:first-of-type{border-top:none}
-  .stat-row .k{font-size:12.5px;color:var(--muted)}.stat-row .k small{color:var(--faint)}
-  .stat-row .v{font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500}.stat-row .v.big{font-size:19px}
-  .v.good{color:var(--ok)}.v.warn{color:var(--warn)}.v.bad{color:var(--bad)}
-  .gauge{height:26px;border-radius:var(--r);background:var(--surface-2);position:relative;overflow:hidden;border:1px solid var(--line);margin:10px 0 4px}
+  .gauge{height:22px;border-radius:var(--r);background:var(--surface-2);position:relative;overflow:hidden;border:1px solid var(--line);margin:8px 0 3px}
   .gauge .fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--ok),var(--warn));opacity:.7}
   .gauge .mark{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--bad)}.gauge .mark.b{background:var(--accent)}
-  .gauge-leg{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted)}
-  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}@media(max-width:880px){.pgrid{grid-template-columns:1fr}}
-  .pblock{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:13px 15px}
-  .pblock h5{margin:0 0 2px;font-size:12.5px;font-weight:600}.pblock .ph{font-size:11px;color:var(--muted);margin:0 0 10px}
-  .ctrl{display:grid;grid-template-columns:118px 1fr 60px 34px;gap:8px;align-items:center;margin:7px 0}
-  .ctrl.no-slider{grid-template-columns:118px 1fr}
-  .ctrl label{font-size:12px;color:var(--muted)}
+  .gauge-leg{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+  .dcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+  .dcard .res-hd{border-radius:0}
+  .dbody{padding:13px 15px;display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:820px){.dbody{grid-template-columns:1fr}}
+  .dsec{margin-bottom:12px}.dsec:last-child{margin-bottom:0}
+  .ctrl{display:grid;grid-template-columns:112px 1fr 56px 26px;gap:7px;align-items:center;margin:6px 0}
+  .ctrl.ns{grid-template-columns:112px 1fr}
+  .ctrl label{font-size:11.5px;color:var(--muted)}
   .ctrl input.num{text-align:right}.ctrl .suf{font-size:11px;color:var(--faint)}
-  .imp{font-size:11.5px;color:var(--muted);background:var(--surface-2);border-radius:var(--r);padding:7px 9px;margin-top:7px;line-height:1.5}.imp b{color:var(--ink);font-weight:500}
+  .impact{background:var(--surface-2);border-radius:var(--r);padding:9px 11px;font-size:12.5px;line-height:1.7}
+  .impact .r{display:flex;justify-content:space-between;gap:10px}
+  .impact .k{color:var(--muted)}.impact .k small{color:var(--faint)}
+  .impact .v{font-family:'IBM Plex Mono',monospace;font-weight:500}
+  .v.good{color:var(--ok)}.v.warn{color:var(--warn)}.v.bad{color:var(--bad)}
+  .imp{font-size:11.5px;color:var(--muted);background:var(--surface-2);border-radius:var(--r);padding:8px 10px;margin-top:8px;line-height:1.55}.imp b{color:var(--ink);font-weight:500}
   .pill{display:inline-block;font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;background:var(--mut-bg);color:var(--muted)}
-  .status-line{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;margin-top:10px}
-  .status-line .b2{font-weight:600}
+  .status-line{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;margin-top:10px}.status-line .b2{font-weight:600}
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 
@@ -161,7 +159,7 @@
 
 <!-- ============================ TAB 1 ============================ -->
 <section class="pane on" id="pane-eq">
-  <p class="intro">Model a new Kamino market as a set of <b>reserves</b> (each with its own role, IRM, risk params, caps and utilization) plus a <b>liquidity deal</b> — the supply &amp; borrow commitments and their prerequisites. Reserves here are shared with the <b>Curator Market Designer</b> tab. Optionally seed from a live market as a template.</p>
+  <p class="intro">Model a new Kamino market as a set of <b>reserves</b> (each with its own role, IRM, risk params, caps and utilization) plus a <b>liquidity deal</b> — the supply &amp; borrow commitments and their prerequisites. Reserves and their utilization are shared with the <b>Curator Market Designer</b> tab. Optionally seed from a live market as a template.</p>
 
   <div class="loader">
     <span class="lbl">Seed from live market <span style="text-transform:none;font-weight:400;color:var(--faint)">(template only)</span></span>
@@ -170,18 +168,18 @@
     <span class="live-stat" id="eqLiveStat">keyless · api.kamino.finance</span>
   </div>
 
-  <section class="vault">
-    <div class="vault-top">
-      <span class="vault-nm"><input class="f" data-p="vault.name" style="font-size:17px;font-weight:600"></span>
+  <section class="mkt">
+    <div class="mkt-top">
+      <span class="mkt-nm"><input class="f" data-p="market.name" style="font-size:17px;font-weight:600"></span>
       <span class="mono" style="margin-left:auto;font-size:12px;color:var(--muted)">Take rate <input class="f num mono" data-p="global.takeRate" style="width:46px;text-align:right" inputmode="decimal">%</span>
     </div>
     <div class="kpis">
-      <div class="kpi"><div class="l">Vault size</div><div class="v" id="kpiPool">—</div><div class="s" id="kpiPoolSub"></div></div>
-      <div class="kpi"><div class="l">Vault Supply APY</div><div class="v" id="kpiBlend">—</div>
+      <div class="kpi"><div class="l">Market size</div><div class="v" id="kpiPool">—</div><div class="s" id="kpiPoolSub"></div></div>
+      <div class="kpi"><div class="l">Market Supply APY</div><div class="v" id="kpiBlend">—</div>
         <div class="inc"><button class="toggle" id="incToggle">incentive</button><input class="f num mono" data-p="global.incentivePct" inputmode="decimal">% rewards</div>
         <div class="s" id="incCost"></div></div>
       <div class="kpi"><div class="l">Total borrowed</div><div class="v" id="kpiBorrow">—</div><div class="s">across reserves</div></div>
-      <div class="kpi"><div class="l">Vault utilization</div><div class="v" id="kpiUtil">—</div><div class="s">borrowed / supplied</div></div>
+      <div class="kpi"><div class="l">Market utilization</div><div class="v" id="kpiUtil">—</div><div class="s">borrowed / supplied</div></div>
     </div>
   </section>
 
@@ -190,15 +188,15 @@
   <button class="add" id="addRes">+ reserve</button>
 
   <div class="sec-h"><h3>Liquidity deal</h3><span class="hint">commitments &amp; prerequisites that feed the solver</span></div>
-  <div class="blk-l" style="margin:4px 0 6px">Vault supply <span style="text-transform:none;font-weight:400;color:var(--muted)">· capital pledged to the vault · earns the blended vault APY</span></div>
+  <div class="blk-l" style="margin:4px 0 6px">Market liquidity <span style="text-transform:none;font-weight:400;color:var(--muted)">· capital supplied to the market · earns the blended market Supply APY</span></div>
   <section class="book">
-    <table class="bk"><thead><tr><th style="width:30%">Actor</th><th>Amount (M)</th><th>Min APY %</th><th>Status</th><th>Note</th><th></th></tr></thead><tbody id="vaultBody"></tbody></table>
-    <div style="padding:8px 10px"><button class="add" id="addVault">+ vault supplier</button></div>
+    <table class="bk"><thead><tr><th style="width:30%">Provider</th><th>Amount (M)</th><th>Min APY %</th><th>Status</th><th>Note</th><th></th></tr></thead><tbody id="supplyBody"></tbody></table>
+    <div style="padding:8px 10px"><button class="add" id="addSupply">+ liquidity provider</button></div>
   </section>
   <div class="blk-l" style="margin:18px 0 6px">Market actors <span style="text-transform:none;font-weight:400;color:var(--muted)">· supply into a reserve and/or borrow another · set borrow to “—” for pure lending</span></div>
   <section class="book">
-    <table class="bk"><thead><tr><th style="width:16%">Actor</th><th>Supply into</th><th>Supply (M)</th><th>Min APY %</th><th>Borrow from</th><th>Borrow (M)</th><th>Max borrow APR %</th><th>Status</th><th></th></tr></thead><tbody id="marketBody"></tbody></table>
-    <div style="padding:8px 10px"><button class="add" id="addMarket">+ market actor</button></div>
+    <table class="bk"><thead><tr><th style="width:16%">Actor</th><th>Supply into</th><th>Supply (M)</th><th>Min APY %</th><th>Borrow from</th><th>Borrow (M)</th><th>Max borrow APR %</th><th>Status</th><th></th></tr></thead><tbody id="actorBody"></tbody></table>
+    <div style="padding:8px 10px"><button class="add" id="addActor">+ market actor</button></div>
   </section>
   <div class="legend">
     <span><span class="dot" style="background:var(--ok)"></span>committed</span>
@@ -207,71 +205,40 @@
     <span><span class="dot" style="background:var(--bad)"></span>withdrawn</span>
     <span><span class="dot" style="background:var(--info)"></span>pipeline</span>
   </div>
-  <p class="note-row"><b>How it reads.</b> Per borrowable reserve, <b>Borrow APR = IRM(utilization)</b> and <b>Supply APY = Borrow APR × utilization × (1 − take rate)</b>. A reserve clears at the highest utilization (bounded by its utilization cap) where borrower demand still covers the borrowed amount. Vault liquidity spreads over borrowable reserves by weight, capped by each deposit cap; undeployed capital dilutes the blended vault APY. Turn <b>override</b> on to pin a reserve's utilization.</p>
+  <p class="note-row"><b>How it reads.</b> Per borrowable reserve, <b>Borrow APR = IRM(utilization)</b> and <b>Supply APY = Borrow APR × utilization × (1 − take rate)</b>. A reserve clears at the highest utilization (bounded by its utilization cap) where borrower demand still covers the borrowed amount. Market liquidity spreads over borrowable reserves by weight, capped by each deposit cap; undeployed capital dilutes the blended Supply APY. Turn <b>override</b> on to pin a reserve's utilization (this shared value also drives the Designer tab).</p>
 </section>
 
 <!-- ============================ TAB 2 ============================ -->
 <section class="pane" id="pane-cur">
-  <p class="intro">Design a reserve the way a <b>curator</b> would, and watch how each parameter changes the experience for a <b>lender</b> and a <b>looper</b>. Reserves are shared with the equilibrium tab. Every slider also accepts a typed value.</p>
+  <p class="intro">Design every reserve the way a <b>curator</b> would — all shown at once. Native yield, IRM and LTV/LLTV come first because they define everything else. Reserves and utilization are shared with the equilibrium tab. Every slider also accepts a typed value.</p>
 
   <div class="loader">
-    <span class="lbl">Reserve</span>
-    <span class="chips" id="curChips"></span>
-    <input class="live" id="curNewName" placeholder="new reserve symbol…" style="max-width:170px">
+    <span class="lbl">Market-wide</span>
+    <span class="mono" style="font-size:12.5px">Take rate <input class="f num mono" data-p="global.takeRate" style="width:46px;text-align:right" inputmode="decimal">%</span>
+    <input class="live" id="curNewName" placeholder="new reserve symbol…" style="max-width:170px;margin-left:auto">
     <button class="btn pri" id="curCreate">+ create reserve</button>
-    <span class="live-stat" id="curLiveStat"></span>
   </div>
 
-  <div class="sec-h"><h3>How the market looks to a user</h3><span class="hint">live impact of the parameters below</span></div>
-  <div class="ux">
-    <div class="card" id="lenderCard"></div>
-    <div class="card" id="looperCard"></div>
-  </div>
-  <div class="ux" style="margin-top:16px">
-    <div class="card">
-      <h4>Interest-rate model <span class="pill" id="curIrmPill">borrow / supply</span></h4>
-      <p class="cap">Borrow APR (blue) and the resulting lender Supply APY (green) vs utilization.</p>
-      <div class="chart" id="curChart"></div>
-      <div class="ctrl" style="grid-template-columns:118px 1fr 60px 34px;margin-top:10px">
-        <label>Utilization</label><input type="range" data-p="cur.scenario.utilization" min="0" max="100" step="1">
-        <input class="f num mono" data-p="cur.scenario.utilization" inputmode="decimal"><span class="suf">%</span>
-      </div>
+  <div class="sec-h"><h3>Collateral price bands &amp; liquidation</h3><span class="hint">for every collateral: where the oracle bands block, and where liquidation hits, as the collateral price moves</span></div>
+  <div class="card">
+    <div class="chart" id="oracleChart"></div>
+    <div class="ctrl" style="grid-template-columns:112px 1fr 56px 26px;max-width:520px;margin-top:8px">
+      <label>Price shock</label><input type="range" data-p="cur.scenario.shock" min="-50" max="25" step="1">
+      <input class="f num mono" data-p="cur.scenario.shock" inputmode="decimal"><span class="suf">%</span>
     </div>
-    <div class="card">
-      <h4>Liquidation runway</h4>
-      <p class="cap">Where borrowing stops (LTV) and where liquidation begins (liq. threshold), as a share of collateral value.</p>
-      <div class="gauge" id="ltvGauge"><div class="fill"></div><div class="mark b" id="ltvMark"></div><div class="mark" id="lltvMark"></div></div>
-      <div class="gauge-leg"><span>0%</span><span>collateral value used</span><span>100%</span></div>
-      <div id="liqStats" style="margin-top:10px"></div>
-    </div>
+    <div class="status-line" id="oracleStatus"></div>
+    <div class="imp" id="oracleMemo"></div>
   </div>
 
-  <div class="sec-h"><h3>Oracle &amp; price bands</h3><span class="hint">how price moves trigger sanity bands (blocking) vs liquidations</span></div>
-  <div class="ux">
-    <div class="card" id="oracleParams"></div>
-    <div class="card">
-      <h4>Price-move impact</h4>
-      <p class="cap">Bands block the oracle; liquidation comes from LTV crossing the threshold.</p>
-      <div class="chart" id="oracleChart"></div>
-      <div class="ctrl" style="grid-template-columns:118px 1fr 60px 34px;margin-top:8px">
-        <label>Price shock</label><input type="range" data-p="cur.scenario.shock" min="-40" max="20" step="1">
-        <input class="f num mono" data-p="cur.scenario.shock" inputmode="decimal"><span class="suf">%</span>
-      </div>
-      <div class="status-line" id="oracleStatus"></div>
-      <div class="imp" id="oracleMemo"></div>
-    </div>
-  </div>
-
-  <div class="sec-h"><h3>Curator parameters</h3><span class="hint">the knobs you set when creating / managing the reserve</span></div>
-  <div class="pgrid" id="paramGrid"></div>
-  <p class="note-row"><b>Reading the impact.</b> <b>LTV</b> caps how much a looper can borrow against the collateral → <b>max leverage = 1 / (1 − LTV)</b>. <b>Liq. threshold (LLTV)</b> is the buffer before liquidation; the gap LLTV − LTV sets how far the collateral can fall before a max-levered looper is liquidated. <b>Borrow factor</b> inflates the counted value of the borrowed asset, shrinking effective leverage. The <b>IRM</b> sets borrow APR vs utilization → Supply APY. <b>Utilization cap</b> blocks new borrows above a threshold. <b>Liq. bonus</b> is the liquidator's discount — the looper's penalty.</p>
+  <div class="sec-h"><h3>Reserves — parameters &amp; user impact</h3><span class="hint">native yield · IRM · LTV/LLTV first, then caps &amp; oracle</span></div>
+  <div id="curGrid"></div>
 </section>
 
 </div>
 
 <script>
 const STATUSES=["committed","scoping","latent","withdrawn","pipeline"];
-const KEY="obligate-v2";
+const KEY="obligate-v3";
 const API="https://api.kamino.finance";
 
 /* helpers */
@@ -304,24 +271,23 @@ async function fetchReserveConfig(mkt,res){
   let h;
   try{h=(await jget(`${API}/kamino-market/${mkt}/reserves/${res}/metrics/history?env=mainnet-beta&start=${start}&end=${end}`)).history;}
   catch(e){h=(await jget(`${API}/kamino-market/${mkt}/reserves/${res}/metrics/history?env=mainnet-beta&start=2020-01-01&end=2100-01-01`)).history;}
-  const m=(h||[]).slice(-1)[0]&&(h.slice(-1)[0].metrics); if(!m)throw new Error("no snapshot");
+  const last=(h||[]).slice(-1)[0], m=last&&last.metrics; if(!m)throw new Error("no snapshot");
   const dec=+m.decimals||0, f=x=>x==null?null:+x;
   return {
     symbol:m.symbol, decimals:dec, ltv:f(m.loanToValue)*100, lltv:f(m.liquidationThreshold)*100,
-    liqBonusMax:f(m.maxLiquidationBonus)*100, liqBonusMin:f(m.minLiquidationBonus)*100,
-    borrowFactor:f(m.borrowFactor), takeRate:f(m.protocolTakeRate)*100,
+    liqBonusMax:f(m.maxLiquidationBonus)*100, liqBonusMin:f(m.minLiquidationBonus)*100, takeRate:f(m.protocolTakeRate)*100,
     depositCap:m.reserveDepositLimit==null?0:f(m.reserveDepositLimit)/10**dec,
     borrowCap:m.reserveBorrowLimit==null?0:f(m.reserveBorrowLimit)/10**dec,
-    supplyApy:f(m.supplyInterestAPY)*100, borrowApy:f(m.borrowInterestAPY)*100, price:f(m.assetOraclePriceUSD),
+    price:f(m.assetOraclePriceUSD),
     irm:(m.borrowCurve||[]).map(p=>({u:+p[0]*100,r:+p[1]*100})),
     borrowable:(f(m.reserveBorrowLimit)||0)>0, collateral:(f(m.loanToValue)||0)>0
   };
 }
 
 /* ---------- state ---------- */
-function newReserve(sym,opts){opts=opts||{};const price=opts.price!=null?opts.price:1;return Object.assign({
+function newReserve(sym,opts){opts=opts||{};const price=opts.price!=null&&opts.price?opts.price:1;return Object.assign({
   id:nid(), sym:sym||"NEW", borrowable:true, collateral:false,
-  nativeYield:0, ltv:0, lltv:0, liqBonus:7.5, borrowFactor:100,
+  nativeYield:0, ltv:0, lltv:0, liqBonus:7.5,
   irm:[{u:0,r:1},{u:80,r:5},{u:90,r:8},{u:100,r:20}],
   depositCap:5000000, borrowCap:4000000, utilCap:0,
   weight:50, override:{on:false,u:80},
@@ -337,29 +303,29 @@ function defaultState(){
   const jitosol=newReserve("JitoSOL",{borrowable:false,collateral:true,ltv:70,lltv:75,liqBonus:6,nativeYield:8,weight:0,price:165,depositCap:150000,borrowCap:0});
   return {
     global:{takeRate:10, incentiveOn:false, incentivePct:1.5},
-    vault:{name:"New market vault"},
+    market:{name:"New market"},
     reserves:[usdc,sol,jitosol],
     books:{
-      vaultSupply:[
+      supply:[
         {actor:"Anchor LP", amount:8, minApy:0, status:"committed", note:"seed"},
         {actor:"Retail aggregator", amount:15, minApy:4, status:"scoping", note:"~4%"}
       ],
-      market:[
+      actors:[
         {actor:"SOL looper", supplyRes:"SOL", supplyAmount:12, minApy:0, borrowRes:"USDC", borrowAmount:8, asked:9, status:"scoping", note:"levered SOL"},
         {actor:"JitoSOL looper", supplyRes:"JitoSOL", supplyAmount:6, minApy:0, borrowRes:"USDC", borrowAmount:4, asked:9, status:"scoping", note:"carry"}
       ]
     },
-    cur:{ selId:usdc.id, scenario:{utilization:80, borrowRate:9, shock:-5} }
+    cur:{ scenario:{shock:-5} }
   };
 }
 let state=defaultState();
 
-/* ---------- shared reserve helpers ---------- */
 function resIndex(id){return state.reserves.findIndex(r=>r.id===id);}
 function borrowables(){return state.reserves.filter(r=>r.borrowable);}
+function marketBorrowApr(){const b=borrowables()[0];if(!b)return 0;return irmAt(b.irm,+b.override.u||0);}
 
 /* ============================================================
-   CHART with numbers (screenshot-ready)
+   CHARTS
 ============================================================ */
 function chartSVG(irm,take,curU){
   const W=340,H=176,padL=34,padR=52,padT=16,padB=24;
@@ -390,37 +356,44 @@ function chartSVG(irm,take,curU){
     <text x="${(W/2).toFixed(0)}" y="${H-2}" font-size="8" fill="var(--faint)" text-anchor="middle">utilization %</text></svg>`;
 }
 
-/* Oracle price-band + liquidation graph */
-function oracleSVG(r){
-  const o=r.oracle||{}, ref=+o.refPrice||1;
-  const loMove=o.lowerBand>0?((+o.lowerBand/ref-1)*100):null;
-  const hiMove=o.upperBand>0?((+o.upperBand/ref-1)*100):null;
-  const liqMove=(r.collateral&&r.ltv>0&&r.lltv>0)?-(1-r.ltv/r.lltv)*100:null;
+/* full-width consolidated oracle band + liquidation graph */
+function oracleAllSVG(){
+  const cols=state.reserves.filter(r=>r.collateral);
   const shock=+state.cur.scenario.shock||0;
-  const W=340,H=150,padL=10,padR=10,padT=22,padB=26;
-  const lo=Math.min(-40,loMove!=null?loMove:0,liqMove!=null?liqMove:0)-2;
-  const hi=Math.max(20,hiMove!=null?hiMove:0)+2;
-  const X=m=>padL+((m-lo)/(hi-lo))*(W-padL-padR);
-  const zoneL=loMove!=null?`<rect x="${padL}" y="${padT}" width="${(X(loMove)-padL).toFixed(1)}" height="${H-padT-padB}" fill="var(--bad-bg)"/>`:"";
-  const zoneR=hiMove!=null?`<rect x="${X(hiMove).toFixed(1)}" y="${padT}" width="${(W-padR-X(hiMove)).toFixed(1)}" height="${H-padT-padB}" fill="var(--bad-bg)"/>`:"";
-  const mid=`<rect x="${loMove!=null?X(loMove).toFixed(1):padL}" y="${padT}" width="${((hiMove!=null?X(hiMove):W-padR)-(loMove!=null?X(loMove):padL)).toFixed(1)}" height="${H-padT-padB}" fill="var(--ok-bg)"/>`;
-  const vline=(m,col,lbl,dash)=>`<line x1="${X(m).toFixed(1)}" y1="${padT}" x2="${X(m).toFixed(1)}" y2="${H-padB}" stroke="${col}" stroke-width="1.6" ${dash?'stroke-dasharray="3 3"':''}/><text x="${X(m).toFixed(1)}" y="${padT-4}" font-size="8.5" fill="${col}" text-anchor="middle" font-weight="600">${lbl}</text>`;
-  const ticks=[lo,lo/2,0,hi/2,hi].map(m=>`<text x="${X(m).toFixed(1)}" y="${H-padB+12}" font-size="8" fill="var(--faint)" text-anchor="middle">${fmt(m,0)}%</text>`).join("");
-  let marks="";
-  marks+=vline(0,"var(--muted)","now",false);
-  if(loMove!=null)marks+=vline(loMove,"var(--bad)","lower band",true);
-  if(hiMove!=null)marks+=vline(hiMove,"var(--bad)","upper band",true);
-  if(liqMove!=null)marks+=vline(liqMove,"var(--warn)","liquidation",false);
-  const shockX=X(clamp(shock,lo,hi));
-  const shockMark=`<polygon points="${shockX.toFixed(1)},${padT-8} ${(shockX-4).toFixed(1)},${padT-2} ${(shockX+4).toFixed(1)},${padT-2}" fill="var(--core-ink)"/><line x1="${shockX.toFixed(1)}" y1="${padT}" x2="${shockX.toFixed(1)}" y2="${H-padB}" stroke="var(--core-ink)" stroke-width="1.4"/>`;
-  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Oracle bands and liquidation vs price move">
-    ${mid}${zoneL}${zoneR}${ticks}${marks}${shockMark}
-    <text x="${padL}" y="10" font-size="8.5" fill="var(--faint)">price move from current →</text>
-    <text x="${W-padR}" y="10" font-size="8.5" fill="var(--bad)" text-anchor="end">red = oracle blocked</text></svg>`;
+  const W=1000,padL=104,padR=30,padT=30,padB=34,rowH=52;
+  if(!cols.length){return `<svg viewBox="0 0 ${W} 90"><text x="${W/2}" y="48" font-size="13" fill="var(--faint)" text-anchor="middle">Enable “collateral” on a reserve to see its price bands &amp; liquidation level.</text></svg>`;}
+  const rows=cols.map(r=>{const o=r.oracle||{},ref=+o.refPrice||1;return {r,ref,
+    lo:o.lowerBand>0?(o.lowerBand/ref-1)*100:null, hi:o.upperBand>0?(o.upperBand/ref-1)*100:null,
+    liq:(r.ltv>0&&r.lltv>0)?-(1-r.ltv/r.lltv)*100:null};});
+  const xmin=Math.min(-50,...rows.map(x=>Math.min(x.lo==null?0:x.lo,x.liq==null?0:x.liq)))-3;
+  const xmax=Math.max(25,...rows.map(x=>x.hi==null?0:x.hi))+3;
+  const H=padT+rows.length*rowH+padB;
+  const X=m=>padL+((clamp(m,xmin,xmax)-xmin)/(xmax-xmin))*(W-padL-padR);
+  const ticks=[];for(let t=Math.ceil(xmin/10)*10;t<=xmax;t+=10)ticks.push(t);
+  const grid=ticks.map(t=>`<line x1="${X(t).toFixed(1)}" y1="${padT-4}" x2="${X(t).toFixed(1)}" y2="${H-padB}" stroke="var(--line)"/><text x="${X(t).toFixed(1)}" y="${H-padB+13}" font-size="9" fill="var(--faint)" text-anchor="middle">${t>0?'+':''}${t}%</text>`).join("");
+  let lanes="";
+  rows.forEach((row,i)=>{
+    const cy=padT+i*rowH+rowH/2, bh=20, ty=cy-bh/2;
+    const loX=row.lo!=null?X(row.lo):X(xmin), hiX=row.hi!=null?X(row.hi):X(xmax);
+    const redL=row.lo!=null?`<rect x="${X(xmin).toFixed(1)}" y="${ty}" width="${(loX-X(xmin)).toFixed(1)}" height="${bh}" fill="var(--bad-bg)"/>`:"";
+    const redR=row.hi!=null?`<rect x="${hiX.toFixed(1)}" y="${ty}" width="${(X(xmax)-hiX).toFixed(1)}" height="${bh}" fill="var(--bad-bg)"/>`:"";
+    const green=`<rect x="${loX.toFixed(1)}" y="${ty}" width="${(hiX-loX).toFixed(1)}" height="${bh}" fill="var(--ok-bg)"/>`;
+    const liq=row.liq!=null?`<line x1="${X(row.liq).toFixed(1)}" y1="${ty-5}" x2="${X(row.liq).toFixed(1)}" y2="${ty+bh+5}" stroke="var(--warn)" stroke-width="2"/><text x="${X(row.liq).toFixed(1)}" y="${ty-8}" font-size="9" fill="var(--warn)" text-anchor="middle" font-weight="600">LLTV ${fmt(row.liq,1)}%</text>`:"";
+    const loLbl=row.lo!=null?`<text x="${loX.toFixed(1)}" y="${ty+bh+13}" font-size="8.5" fill="var(--bad)" text-anchor="middle">band ${fmt(row.lo,0)}%</text>`:"";
+    const hiLbl=row.hi!=null?`<text x="${hiX.toFixed(1)}" y="${ty+bh+13}" font-size="8.5" fill="var(--bad)" text-anchor="middle">band +${fmt(row.hi,0)}%</text>`:"";
+    lanes+=`<text x="${padL-10}" y="${cy+1}" font-size="11" fill="var(--ink)" text-anchor="end" font-weight="600">${esc(row.r.sym)}</text>
+      <text x="${padL-10}" y="${cy+12}" font-size="8" fill="var(--faint)" text-anchor="end">$${fmt(row.ref,row.ref<10?3:0)}</text>
+      ${green}${redL}${redR}${liq}${loLbl}${hiLbl}`;
+  });
+  const sx=X(shock);
+  const shockLine=`<line x1="${sx.toFixed(1)}" y1="${padT-6}" x2="${sx.toFixed(1)}" y2="${H-padB}" stroke="var(--core-ink)" stroke-width="1.6"/><polygon points="${sx.toFixed(1)},${padT-12} ${(sx-5).toFixed(1)},${padT-6} ${(sx+5).toFixed(1)},${padT-6}" fill="var(--core-ink)"/><text x="${sx.toFixed(1)}" y="${H-6}" font-size="9" fill="var(--core-ink)" text-anchor="middle" font-weight="600">shock ${shock>0?'+':''}${shock}%</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Collateral price bands and liquidation">
+    ${grid}${lanes}${shockLine}
+    <text x="${padL}" y="14" font-size="9.5" fill="var(--faint)">collateral price move from current →   <tspan fill="var(--ok)">green = oracle OK</tspan> · <tspan fill="var(--bad)">red = oracle blocked</tspan> · <tspan fill="var(--warn)">line = liquidation</tspan></text></svg>`;
 }
 
 /* ============================================================
-   TAB 1 render + solver
+   SOLVER
 ============================================================ */
 function clearReserve(supply,borrowers,irm,take,utilCap){
   const cap=(utilCap>0?utilCap:100);
@@ -437,19 +410,19 @@ function evalSystem(pool){
   for(let iter=0;iter<24;iter++){
     per=state.reserves.map(res=>{
       if(!res.borrowable){
-        let sup=0;state.books.market.forEach(a=>{if(a.status!=="withdrawn"&&a.supplyRes===res.sym)sup+=(+a.supplyAmount||0);});
+        let sup=0;state.books.actors.forEach(a=>{if(a.status!=="withdrawn"&&a.supplyRes===res.sym)sup+=(+a.supplyAmount||0);});
         return {res,vaultAlloc:0,supply:sup,borrow:0,U:0,apr:0,supplyApy:+res.nativeYield||0};
       }
       const wv=(+res.weight||0)/wsum, vaultAlloc=Math.min(wv*pool,(res.depositCap>0?res.depositCap/1e6:Infinity));
       const gg=sApy[res.sym]==null?1e9:sApy[res.sym]; let mktSupply=0;
-      state.books.market.forEach(a=>{
+      state.books.actors.forEach(a=>{
         if(a.status==="withdrawn"||a.supplyRes!==res.sym)return;
         const pure=(!a.borrowRes||a.borrowRes==="—");
         if(pure){if(a.status==="committed"||(+a.minApy<=gg+1e-9))mktSupply+=(+a.supplyAmount||0);}
         else{if(+a.asked>=(apr[a.borrowRes]||0)-1e-9)mktSupply+=(+a.supplyAmount||0);}
       });
       const supply=vaultAlloc+mktSupply;
-      const borrowers=state.books.market.filter(a=>a.status!=="withdrawn"&&a.borrowRes===res.sym).map(a=>({amount:+a.borrowAmount||0,asked:+a.asked||0}));
+      const borrowers=state.books.actors.filter(a=>a.status!=="withdrawn"&&a.borrowRes===res.sym).map(a=>({amount:+a.borrowAmount||0,asked:+a.asked||0}));
       let r;
       if(res.override&&res.override.on){const U=clamp(+res.override.u||0,0,100);r={supply,borrow:U/100*supply,U,apr:irmAt(res.irm,U),supplyApy:supplyAt(res.irm,U,take)};}
       else r=clearReserve(supply,borrowers,res.irm,take,+res.utilCap||0);
@@ -463,7 +436,7 @@ function evalSystem(pool){
 }
 function solveEq(){
   const inc=state.global.incentiveOn?(+state.global.incentivePct||0):0;
-  const sup=state.books.vaultSupply.filter(s=>s.status!=="withdrawn"&&(+s.amount||0)>0);
+  const sup=state.books.supply.filter(s=>s.status!=="withdrawn"&&(+s.amount||0)>0);
   const committed=sup.filter(s=>s.status==="committed").reduce((a,s)=>a+(+s.amount||0),0);
   const others=sup.filter(s=>s.status!=="committed").map(s=>({amount:+s.amount||0,minApy:+s.minApy||0})).sort((a,b)=>a.minApy-b.minApy);
   const totalSupply=sup.reduce((a,s)=>a+(+s.amount||0),0);
@@ -472,16 +445,20 @@ function solveEq(){
   best=evalSystem(pool);
   return {pool,committed,totalSupply,inc,vaultApy:best.baseApy+inc,...best};
 }
-function fld(label,p,extra){return `<div class="fld"><label>${label}</label><input class="f num mono" data-p="${p}" inputmode="decimal" ${extra||""}></div>`;}
+
+/* ============================================================
+   TAB 1 render
+============================================================ */
+function fldR(label,p,extra){return `<div class="fld"><label>${label}</label><input class="mono" data-p="${p}" inputmode="decimal" ${extra||""}></div>`;}
 function renderReserves(){
   const c=document.getElementById("resGrid");c.innerHTML="";
   state.reserves.forEach((r,ri)=>{
     let riskRow = r.collateral
-      ? `<div class="grid4">${fld("Native yld %","reserves."+ri+".nativeYield")}${fld("LTV %","reserves."+ri+".ltv")}${fld("LLTV %","reserves."+ri+".lltv")}${fld("Liq bonus %","reserves."+ri+".liqBonus")}</div>`
+      ? `<div class="grid4">${fldR("Native yld %","reserves."+ri+".nativeYield")}${fldR("LTV %","reserves."+ri+".ltv")}${fldR("LLTV %","reserves."+ri+".lltv")}${fldR("Liq bonus %","reserves."+ri+".liqBonus")}</div>`
       : `<div class="imp">Supply/debt-only asset — <b>not usable as collateral</b>, so no LTV / LLTV.</div>`;
     let debtRow = r.borrowable
-      ? `<div class="grid4">${fld("Borrow factor","reserves."+ri+".borrowFactor")}${fld("Weight","reserves."+ri+".weight")}${fld("Deposit cap","reserves."+ri+".depositCap")}${fld("Util cap %","reserves."+ri+".utilCap")}</div>`
-      : `<div class="grid4">${fld("Deposit cap","reserves."+ri+".depositCap")}</div>`;
+      ? `<div class="grid3">${fldR("Weight","reserves."+ri+".weight")}${fldR("Deposit cap","reserves."+ri+".depositCap")}${fldR("Util cap %","reserves."+ri+".utilCap")}</div>`
+      : `<div class="grid3">${fldR("Deposit cap","reserves."+ri+".depositCap")}</div>`;
     let irmBlock="";
     if(r.borrowable){
       const pts=(r.irm||[]).map((p,pi)=>`<tr><td><input class="f num mono" data-p="reserves.${ri}.irm.${pi}.u" inputmode="decimal"></td><td><input class="f num mono" data-p="reserves.${ri}.irm.${pi}.r" inputmode="decimal"></td><td style="width:16px"><button class="x" data-act="delPt" data-ri="${ri}" data-pi="${pi}">×</button></td></tr>`).join("");
@@ -491,7 +468,7 @@ function renderReserves(){
         <button class="add" data-act="addPt" data-ri="${ri}">+ point</button></div>
       <div class="ovr"><button class="toggle${r.override.on?' on':''}" data-act="ovr" data-ri="${ri}">${r.override.on?'override ON':'override OFF'}</button>
         <label>utilization</label><input type="range" min="0" max="100" step="1" data-p="reserves.${ri}.override.u" ${r.override.on?'':'disabled'} style="flex:1">
-        <input class="f num mono" data-p="reserves.${ri}.override.u" inputmode="decimal" style="width:44px;text-align:right"><span class="suf" style="font-size:11px;color:var(--faint)">%</span></div>`;
+        <input class="f num mono" data-p="reserves.${ri}.override.u" inputmode="decimal" style="width:44px;text-align:right"><span style="font-size:11px;color:var(--faint)">%</span></div>`;
     }
     const card=el(`<div class="res"></div>`);
     card.innerHTML=`
@@ -512,25 +489,25 @@ function renderReserves(){
 function statSelect(p,val){return `<select class="f stat" data-stat data-p="${p}">`+STATUSES.map(s=>`<option${s===val?" selected":""}>${esc(s)}</option>`).join("")+`</select>`;}
 function symSelect(p,val,dash){const opts=(dash?["—"]:[]).concat(state.reserves.map(r=>r.sym));return `<select class="f" data-p="${p}">`+opts.map(o=>`<option${o===val?" selected":""}>${esc(o)}</option>`).join("")+`</select>`;}
 function renderBooks(){
-  const vb=document.getElementById("vaultBody");vb.innerHTML="";
-  state.books.vaultSupply.forEach((s,i)=>vb.appendChild(el(`<tr data-status="${s.status}">
-    <td><div class="actor-cell"><span class="dot"></span><input class="f" data-p="books.vaultSupply.${i}.actor"></div></td>
-    <td><input class="f num mono" data-p="books.vaultSupply.${i}.amount" inputmode="decimal"></td>
-    <td><input class="f num mono" data-p="books.vaultSupply.${i}.minApy" inputmode="decimal"></td>
-    <td>${statSelect(`books.vaultSupply.${i}.status`,s.status)}</td>
-    <td><input class="f" data-p="books.vaultSupply.${i}.note"></td>
-    <td style="width:20px"><button class="x" data-act="delVault" data-i="${i}">×</button></td></tr>`)));
-  const mb=document.getElementById("marketBody");mb.innerHTML="";
-  state.books.market.forEach((s,i)=>mb.appendChild(el(`<tr data-status="${s.status}">
-    <td><div class="actor-cell"><span class="dot"></span><input class="f" data-p="books.market.${i}.actor"></div></td>
-    <td>${symSelect(`books.market.${i}.supplyRes`,s.supplyRes,false)}</td>
-    <td><input class="f num mono" data-p="books.market.${i}.supplyAmount" inputmode="decimal" style="width:58px"></td>
-    <td><input class="f num mono" data-p="books.market.${i}.minApy" inputmode="decimal" style="width:54px"></td>
-    <td>${symSelect(`books.market.${i}.borrowRes`,s.borrowRes,true)}</td>
-    <td><input class="f num mono" data-p="books.market.${i}.borrowAmount" inputmode="decimal" style="width:58px"></td>
-    <td><input class="f num mono" data-p="books.market.${i}.asked" inputmode="decimal" style="width:58px"></td>
-    <td>${statSelect(`books.market.${i}.status`,s.status)}</td>
-    <td style="width:20px"><button class="x" data-act="delMkt" data-i="${i}">×</button></td></tr>`)));
+  const vb=document.getElementById("supplyBody");vb.innerHTML="";
+  state.books.supply.forEach((s,i)=>vb.appendChild(el(`<tr data-status="${s.status}">
+    <td><div class="actor-cell"><span class="dot"></span><input class="f" data-p="books.supply.${i}.actor"></div></td>
+    <td><input class="f num mono" data-p="books.supply.${i}.amount" inputmode="decimal"></td>
+    <td><input class="f num mono" data-p="books.supply.${i}.minApy" inputmode="decimal"></td>
+    <td>${statSelect(`books.supply.${i}.status`,s.status)}</td>
+    <td><input class="f" data-p="books.supply.${i}.note"></td>
+    <td style="width:20px"><button class="x" data-act="delSupply" data-i="${i}">×</button></td></tr>`)));
+  const mb=document.getElementById("actorBody");mb.innerHTML="";
+  state.books.actors.forEach((s,i)=>mb.appendChild(el(`<tr data-status="${s.status}">
+    <td><div class="actor-cell"><span class="dot"></span><input class="f" data-p="books.actors.${i}.actor"></div></td>
+    <td>${symSelect(`books.actors.${i}.supplyRes`,s.supplyRes,false)}</td>
+    <td><input class="f num mono" data-p="books.actors.${i}.supplyAmount" inputmode="decimal" style="width:58px"></td>
+    <td><input class="f num mono" data-p="books.actors.${i}.minApy" inputmode="decimal" style="width:54px"></td>
+    <td>${symSelect(`books.actors.${i}.borrowRes`,s.borrowRes,true)}</td>
+    <td><input class="f num mono" data-p="books.actors.${i}.borrowAmount" inputmode="decimal" style="width:58px"></td>
+    <td><input class="f num mono" data-p="books.actors.${i}.asked" inputmode="decimal" style="width:58px"></td>
+    <td>${statSelect(`books.actors.${i}.status`,s.status)}</td>
+    <td style="width:20px"><button class="x" data-act="delActor" data-i="${i}">×</button></td></tr>`)));
 }
 function outB(k,v){return `<div class="out"><span class="k">${k}</span><span class="v">${v}</span></div>`;}
 function computeEq(){
@@ -544,7 +521,7 @@ function computeEq(){
   sol.per.forEach((p,i)=>{const out=document.querySelector(`[data-out="${i}"]`);if(!out)return;
     if(p.res.borrowable)out.innerHTML=outB("Supply",fmt(p.supply,2)+"M")+outB("Borrow",fmt(p.borrow,2)+"M")+outB("Util · APR",pct(p.U,1)+" · "+pct(p.apr,2))+outB("Supply APY",pct(p.supplyApy,2));
     else out.innerHTML=outB("Supplied",fmt(p.supply,2)+"M")+outB("Native yld",pct(p.res.nativeYield,2))+outB("Max lev",p.res.ltv>0&&p.res.ltv<100?fmt(1/(1-p.res.ltv/100),2)+"×":"—")+outB("LLTV",pct(p.res.lltv,0));});
-  state.reserves.forEach((r,i)=>{if(!r.borrowable)return;const so=sol.per[i];const ch=document.querySelector(`[data-chart="${i}"]`);if(ch)ch.innerHTML=chartSVG(r.irm,+state.global.takeRate||0,so?so.U:null);const o=document.querySelector(`[data-ovr="${i}"]`);if(o)o.textContent=(r.override.u||0)+"%";});
+  state.reserves.forEach((r,i)=>{if(!r.borrowable)return;const so=sol.per[i];const ch=document.querySelector(`[data-chart="${i}"]`);if(ch)ch.innerHTML=chartSVG(r.irm,+state.global.takeRate||0,so?so.U:null);});
 }
 function syncEq(){
   document.querySelectorAll("#pane-eq [data-p]").forEach(n=>{const v=gp(state,n.getAttribute("data-p"));if(n.tagName==="SELECT")n.value=v;else if(n.type==="range")n.value=(v==null?0:v);else n.value=(v==null?"":v);});
@@ -553,129 +530,106 @@ function syncEq(){
 function renderEq(){renderReserves();renderBooks();syncEq();computeEq();}
 
 /* ============================================================
-   TAB 2 render
+   TAB 2 render — all reserves at once
 ============================================================ */
-function selReserve(){let r=state.reserves.find(x=>x.id===state.cur.selId);if(!r){r=state.reserves[0];if(r)state.cur.selId=r.id;}return r;}
-function renderChips(){
-  const c=document.getElementById("curChips");c.innerHTML="";
-  state.reserves.forEach(r=>{const b=el(`<button class="chip${r.id===state.cur.selId?' on':''}" data-chip="${r.id}">${esc(r.sym)}</button>`);c.appendChild(b);});
-}
-function renderLender(){
-  const r=selReserve(); if(!r){document.getElementById("lenderCard").innerHTML="";return;}
-  const take=+state.global.takeRate||0, U=+state.cur.scenario.utilization||0;
-  if(!r.borrowable){document.getElementById("lenderCard").innerHTML=`<h4>Lender</h4><p class="cap">This reserve is <b>not borrowable</b> — lenders earn only its native yield.</p><div class="stat-row"><span class="k">Native yield</span><span class="v big good">${pct(r.nativeYield,2)}</span></div>`;return;}
-  const borrowApr=irmAt(r.irm,U), sApy=supplyAt(r.irm,U,take), gross=borrowApr*(U/100), fee=gross-sApy;
-  document.getElementById("lenderCard").innerHTML=`
-    <h4>Lender <span class="pill">deposits ${esc(r.sym)}</span></h4>
-    <p class="cap">Earns yield from borrowers. At ${pct(U,0)} utilization:</p>
-    <div class="stat-row"><span class="k">Supply APY <small>what you receive</small></span><span class="v big good">${pct(sApy,2)}</span></div>
-    <div class="stat-row"><span class="k">Borrow APR <small>what borrowers pay</small></span><span class="v">${pct(borrowApr,2)}</span></div>
-    <div class="stat-row"><span class="k">Gross yield <small>borrow × util</small></span><span class="v">${pct(gross,2)}</span></div>
-    <div class="stat-row"><span class="k">Protocol take <small>${pct(take,0)} fee</small></span><span class="v warn">−${pct(fee,2)}</span></div>
-    <div class="stat-row"><span class="k">Deposit cap</span><span class="v">${fmt(r.depositCap,0)} ${esc(r.sym)}</span></div>
-    <div class="imp">Higher utilization ⇒ higher Supply APY but less free liquidity. The <b>take rate</b> skims ${pct(take,0)} off gross before it reaches lenders.</div>`;
-}
-function renderLooper(){
-  const r=selReserve(); if(!r){document.getElementById("looperCard").innerHTML="";return;}
-  if(!r.collateral){document.getElementById("looperCard").innerHTML=`<h4>Looper</h4><p class="cap">This reserve <b>can't be used as collateral</b> (no LTV), so it isn't the collateral leg of a loop. Loopers borrow it instead.</p>`;return;}
-  const ltv=r.ltv/100, lltv=r.lltv/100, bf=(r.borrowFactor||100)/100, bR=+state.cur.scenario.borrowRate||0;
-  const maxLev=ltv>0&&ltv<1?1/(1-ltv):null, maxLevBf=ltv>0&&ltv<1?1/(1-ltv/bf):null;
-  const dropToLiq=lltv>0?Math.max(0,1-ltv/lltv):0;
-  const net=maxLev!=null?(r.nativeYield*maxLev-bR*(maxLev-1)):null;
-  document.getElementById("looperCard").innerHTML=`
-    <h4>Looper <span class="pill">collateral ${esc(r.sym)}</span></h4>
-    <p class="cap">Deposits ${esc(r.sym)}, borrows a debt asset (at ${pct(bR,1)} APR — editable below) and loops.</p>
-    <div class="stat-row"><span class="k">Max leverage <small>1/(1−LTV)</small></span><span class="v big">${maxLev?fmt(maxLev,2)+"×":"—"}</span></div>
-    <div class="stat-row"><span class="k">…with borrow factor <small>BF ${pct(r.borrowFactor,0)}</small></span><span class="v">${maxLevBf?fmt(maxLevBf,2)+"×":"—"}</span></div>
-    <div class="stat-row"><span class="k">Liquidation drop <small>collateral fall tolerated</small></span><span class="v ${dropToLiq<0.05?'bad':dropToLiq<0.12?'warn':'good'}">${pct(dropToLiq*100,1)}</span></div>
-    <div class="stat-row"><span class="k">Est. looped APY <small>at max leverage</small></span><span class="v ${net>0?'good':'bad'}">${net!=null?pct(net,2):"—"}</span></div>
-    <div class="stat-row"><span class="k">Liquidation penalty <small>bonus to liquidator</small></span><span class="v bad">−${pct(r.liqBonus,2)}</span></div>
-    <div class="imp">Looped APY = collateral yield (${pct(r.nativeYield,1)}) × leverage − borrow APR (${pct(bR,1)}) × (leverage − 1). Negative carry bleeds the loop; a liquidation drop under ~5% is fragile.</div>`;
-}
-function renderLiqRunway(){
-  const r=selReserve(); const g=document.getElementById("ltvGauge"); if(!r){return;}
-  const ltv=r.collateral?r.ltv:0, lltv=r.collateral?r.lltv:0;
-  g.querySelector(".fill").style.width=lltv+"%";
-  document.getElementById("ltvMark").style.left=ltv+"%";document.getElementById("lltvMark").style.left=lltv+"%";
-  const gap=lltv-ltv;
-  document.getElementById("liqStats").innerHTML=r.collateral?`
-    <div class="stat-row"><span class="k"><span style="color:var(--accent)">▮</span> LTV <small>borrowing stops</small></span><span class="v">${pct(ltv,1)}</span></div>
-    <div class="stat-row"><span class="k"><span style="color:var(--bad)">▮</span> Liq. threshold <small>liquidation begins</small></span><span class="v">${pct(lltv,1)}</span></div>
-    <div class="stat-row"><span class="k">Safety gap <small>LLTV − LTV</small></span><span class="v ${gap<3?'bad':gap<7?'warn':'good'}">${pct(gap,1)}</span></div>`
-    :`<div class="imp">Not a collateral asset — no liquidation runway.</div>`;
-}
-function renderOracle(){
-  const r=selReserve(); if(!r)return;
-  document.getElementById("oracleChart").innerHTML=oracleSVG(r);
-  const o=r.oracle, ref=+o.refPrice||1, shock=+state.cur.scenario.shock||0;
-  const loMove=o.lowerBand>0?((o.lowerBand/ref-1)*100):null, hiMove=o.upperBand>0?((o.upperBand/ref-1)*100):null;
-  const liqMove=(r.collateral&&r.ltv>0&&r.lltv>0)?-(1-r.ltv/r.lltv)*100:null;
-  const blocked=(loMove!=null&&shock<=loMove)||(hiMove!=null&&shock>=hiMove);
-  const liquidated=(liqMove!=null&&shock<=liqMove);
-  document.getElementById("oracleStatus").innerHTML=`
-    <span>Shocked price: <span class="b2 mono">${fmt(ref*(1+shock/100),ref<10?4:2)}</span></span>
-    <span>Oracle: <span class="b2 ${blocked?'v bad':'v good'}">${blocked?'BLOCKED (outside band)':'OK'}</span></span>
-    <span>Position: <span class="b2 ${liquidated?'v bad':(liqMove!=null?'v good':'')}">${liqMove==null?'n/a (not collateral)':(liquidated?'LIQUIDATED':'safe')}</span></span>`;
-  document.getElementById("oracleMemo").innerHTML=`<b>Memo.</b> The <b>lower/upper bands</b> are Kamino price <b>sanity bounds</b> (heuristic <span class="mono">lower/upper</span>): if the oracle quote falls outside, the price is <b>rejected / frozen</b> — an anti-manipulation &amp; flash-crash block. Bands do <b>not</b> liquidate. Liquidation is driven separately: a genuine price drop (within the bands) that pushes effective LTV past the <b>liq. threshold</b> (here at ${liqMove!=null?fmt(liqMove,1)+"%":"n/a"}). If price exits the lower band, the oracle freezes the last valid price, which can <b>delay</b> liquidations rather than cause them. A tight band also risks blocking legitimate large moves — TWAP divergence guard (${fmt(o.maxDivergenceBps,0)} bps) and max age (${fmt(o.maxPriceAge,0)}s) add further gating.`;
-}
 function ctrl(label,p,min,max,step,suffix){return `<div class="ctrl"><label>${label}</label><input type="range" data-p="${p}" min="${min}" max="${max}" step="${step}"><input class="f num mono" data-p="${p}" inputmode="decimal"><span class="suf">${suffix||""}</span></div>`;}
-function ctrlN(label,p,suffix){return `<div class="ctrl no-slider"><label>${label}</label><div style="display:flex;align-items:center;gap:6px"><input class="f num mono" data-p="${p}" inputmode="decimal" style="width:90px;text-align:right"><span class="suf">${suffix||""}</span></div></div>`;}
-function ctrlT(label,p){return `<div class="ctrl no-slider"><label>${label}</label><input class="f" data-p="${p}"></div>`;}
-function renderParams(){
-  const r=selReserve(); const g=document.getElementById("paramGrid"); if(!r){g.innerHTML="<p class='intro'>No reserve — create one above.</p>";return;}
-  const ri=resIndex(r.id);
-  const irmRows=(r.irm||[]).map((p,i)=>`<tr><td><input class="f num mono" data-p="reserves.${ri}.irm.${i}.u" inputmode="decimal"></td><td><input class="f num mono" data-p="reserves.${ri}.irm.${i}.r" inputmode="decimal"></td><td style="width:16px"><button class="x" data-act="curDelPt" data-pi="${i}">×</button></td></tr>`).join("");
-  g.innerHTML=`
-    <div class="pblock">
-      <h5>Asset & role</h5><p class="ph">what the reserve is and how it can be used</p>
-      ${ctrlT("Symbol","reserves."+ri+".sym")}
-      <div class="ctrl no-slider"><label>Roles</label><div style="display:flex;gap:6px">
-        <button class="toggle b${r.borrowable?' on':''}" data-act="tbor2">borrowable</button>
-        <button class="toggle${r.collateral?' on':''}" data-act="tcol2">collateral</button></div></div>
-      ${ctrlN("Native yield","reserves."+ri+".nativeYield","%")}
-      <div class="imp">Native yield is the asset's intrinsic yield (e.g. LST staking). Typed manually.</div>
-    </div>
-    <div class="pblock">
-      <h5>Risk parameters</h5><p class="ph">${r.collateral?"borrowing power & liquidation":"collateral role off — enable it for LTV/LLTV"}</p>
-      ${r.collateral?ctrl("LTV","reserves."+ri+".ltv",0,98,1,"%")+ctrl("Liq. threshold","reserves."+ri+".lltv",0,99,1,"%")+ctrl("Liq. bonus","reserves."+ri+".liqBonus",0,25,0.5,"%"):""}
-      ${r.borrowable?ctrl("Borrow factor","reserves."+ri+".borrowFactor",100,300,5,"%"):""}
-      <div class="imp">${r.collateral?"Max leverage rises with LTV; the liq.-threshold − LTV gap is the safety buffer (see Looper card).":"Borrow factor inflates counted debt value for risky assets."}</div>
-    </div>
-    <div class="pblock">
-      <h5>Interest-rate model</h5><p class="ph">${r.borrowable?"utilization → borrow APR breakpoints":"not borrowable — enable the role to add an IRM"}</p>
-      ${r.borrowable?`<table class="pts"><thead><tr><th>Util %</th><th>Borrow %</th><th></th></tr></thead><tbody>${irmRows}</tbody></table><button class="add" data-act="curAddPt">+ point</button>`:""}
-    </div>
-    <div class="pblock">
-      <h5>Caps & fees</h5><p class="ph">size limits, utilization guard and protocol cut</p>
-      ${ctrl("Take rate","global.takeRate",0,50,1,"%")}
-      ${ctrlN("Deposit cap","reserves."+ri+".depositCap","")}
-      ${r.borrowable?ctrlN("Borrow cap","reserves."+ri+".borrowCap",""):""}
-      ${r.borrowable?ctrl("Utilization cap","reserves."+ri+".utilCap",0,100,1,"%"):""}
-      <div class="imp"><b>Utilization cap</b> blocks new borrows once utilization exceeds it (0 = disabled). Take rate is market-wide.</div>
-    </div>
-    <div class="pblock" style="grid-column:1/-1">
-      <h5>Oracle</h5><p class="ph">price feeds, staleness and sanity bands (edit → see the price-move graph above)</p>
-      <div class="pgrid" style="gap:0 18px">
-        <div>
-          ${ctrlT("Primary oracle","reserves."+ri+".oracle.primary")}
-          ${ctrlT("Secondary oracle","reserves."+ri+".oracle.secondary")}
-          ${ctrlN("Reference price","reserves."+ri+".oracle.refPrice","$")}
+function ctrlN(label,p,suffix){return `<div class="ctrl ns"><label>${label}</label><div style="display:flex;align-items:center;gap:6px"><input class="f num mono" data-p="${p}" inputmode="decimal" style="width:96px;text-align:right"><span class="suf">${suffix||""}</span></div></div>`;}
+function ctrlT(label,p){return `<div class="ctrl ns"><label>${label}</label><input class="f" data-p="${p}"></div>`;}
+function curCard(r,ri){
+  const irmRows=(r.irm||[]).map((p,i)=>`<tr><td><input class="f num mono" data-p="reserves.${ri}.irm.${i}.u" inputmode="decimal"></td><td><input class="f num mono" data-p="reserves.${ri}.irm.${i}.r" inputmode="decimal"></td><td style="width:16px"><button class="x" data-act="curDelPt" data-ri="${ri}" data-pi="${i}">×</button></td></tr>`).join("");
+  const left=`
+    <div>
+      <div class="dsec">
+        <div class="blk-l">Defines everything</div>
+        ${ctrlN("Native yield","reserves."+ri+".nativeYield","%")}
+        ${r.collateral?ctrl("LTV","reserves."+ri+".ltv",0,98,1,"%")+ctrl("Liq. threshold (LLTV)","reserves."+ri+".lltv",0,99,1,"%")+ctrl("Liq. bonus","reserves."+ri+".liqBonus",0,25,0.5,"%"):`<div class="imp">Not a collateral asset — enable <b>collateral</b> for LTV / LLTV.</div>`}
+        ${r.collateral?`<div class="gauge" data-gauge="${ri}"><div class="fill"></div><div class="mark b" data-mb="${ri}"></div><div class="mark" data-ml="${ri}"></div></div><div class="gauge-leg"><span>0%</span><span>collateral value used</span><span>100%</span></div>`:""}
+      </div>
+      ${r.borrowable?`<div class="dsec"><div class="blk-l">Interest-rate model</div>
+        <div class="irm-grid"><table class="pts"><thead><tr><th>Util %</th><th>Borrow %</th><th></th></tr></thead><tbody>${irmRows}</tbody></table>
+        <div class="chart" data-chart2="${ri}"></div></div>
+        <button class="add" data-act="curAddPt" data-ri="${ri}">+ point</button>
+        <div class="ctrl" style="margin-top:6px"><label>Utilization (shared)</label><input type="range" data-p="reserves.${ri}.override.u" min="0" max="100" step="1"><input class="f num mono" data-p="reserves.${ri}.override.u" inputmode="decimal"><span class="suf">%</span></div>
+        </div>`:`<div class="dsec"><div class="imp">Not borrowable — enable <b>borrowable</b> to add an IRM.</div></div>`}
+    </div>`;
+  const right=`
+    <div>
+      <div class="dsec"><div class="blk-l">Caps</div>
+        ${ctrlN("Deposit cap","reserves."+ri+".depositCap","")}
+        ${r.borrowable?ctrlN("Borrow cap","reserves."+ri+".borrowCap",""):""}
+        ${r.borrowable?ctrl("Utilization cap","reserves."+ri+".utilCap",0,100,1,"%"):""}
+        ${r.borrowable?ctrlN("Weight (market)","reserves."+ri+".weight",""):""}
+      </div>
+      <div class="dsec"><div class="blk-l">Oracle</div>
+        ${ctrlT("Primary oracle","reserves."+ri+".oracle.primary")}
+        ${ctrlT("Secondary oracle","reserves."+ri+".oracle.secondary")}
+        <div class="grid3" style="margin-top:4px">
+          ${fldR("Ref price $","reserves."+ri+".oracle.refPrice")}
+          ${fldR("Lower band $","reserves."+ri+".oracle.lowerBand")}
+          ${fldR("Upper band $","reserves."+ri+".oracle.upperBand")}
         </div>
-        <div>
-          ${ctrlN("Max price age","reserves."+ri+".oracle.maxPriceAge","s")}
-          ${ctrlN("Max TWAP age","reserves."+ri+".oracle.maxTwapAge","s")}
-          ${ctrlN("Max divergence","reserves."+ri+".oracle.maxDivergenceBps","bps")}
+        <div class="grid3" style="margin-top:6px">
+          ${fldR("Max price age s","reserves."+ri+".oracle.maxPriceAge")}
+          ${fldR("Max TWAP age s","reserves."+ri+".oracle.maxTwapAge")}
+          ${fldR("Max diverg. bps","reserves."+ri+".oracle.maxDivergenceBps")}
         </div>
-        <div>${ctrlN("Lower band","reserves."+ri+".oracle.lowerBand","$")}</div>
-        <div>${ctrlN("Upper band","reserves."+ri+".oracle.upperBand","$")}</div>
+      </div>
+      <div class="dsec"><div class="blk-l">User impact</div>
+        <div class="impact" data-impact="${ri}"></div>
       </div>
     </div>`;
+  const card=el(`<div class="dcard" style="margin-bottom:16px"></div>`);
+  card.innerHTML=`
+    <div class="res-hd">
+      <span class="res-sym"><input class="f" data-p="reserves.${ri}.sym"></span>
+      ${r.live?'<span class="badge live">live-seeded</span>':''}
+      <span style="margin-left:auto;display:flex;gap:6px">
+        <button class="toggle b${r.borrowable?' on':''}" data-act="tbor" data-ri="${ri}">borrowable</button>
+        <button class="toggle${r.collateral?' on':''}" data-act="tcol" data-ri="${ri}">collateral</button>
+        <button class="x" data-act="delRes" data-ri="${ri}">×</button>
+      </span>
+    </div>
+    <div class="dbody">${left}${right}</div>`;
+  return card;
 }
-function computeCur(){renderLender();renderLooper();renderLiqRunway();renderOracle();
-  document.getElementById("curChart").innerHTML=chartSVG(selReserve()?selReserve().irm:[],+state.global.takeRate||0,+state.cur.scenario.utilization||0);
+function renderCurCards(){
+  const g=document.getElementById("curGrid");g.innerHTML="";
+  if(!state.reserves.length){g.innerHTML="<p class='intro'>No reserve yet — create one above.</p>";return;}
+  state.reserves.forEach((r,ri)=>g.appendChild(curCard(r,ri)));
+}
+function impactHTML(r){
+  const take=+state.global.takeRate||0;
+  let out="";
+  if(r.borrowable){const U=+r.override.u||0,ba=irmAt(r.irm,U),sa=supplyAt(r.irm,U,take);
+    out+=`<div class="r"><span class="k">Lender · Supply APY <small>@ util ${fmt(U,0)}%</small></span><span class="v good">${pct(sa,2)}</span></div>
+    <div class="r"><span class="k">Borrow APR <small>paid</small></span><span class="v">${pct(ba,2)}</span></div>`;}
+  if(r.collateral){const ltv=r.ltv/100,lltv=r.lltv/100,maxLev=ltv>0&&ltv<1?1/(1-ltv):null,drop=lltv>0?Math.max(0,1-ltv/lltv):0,bR=marketBorrowApr(),net=maxLev!=null?(r.nativeYield*maxLev-bR*(maxLev-1)):null;
+    out+=`<div class="r"><span class="k">Looper · Max leverage <small>1/(1−LTV)</small></span><span class="v">${maxLev?fmt(maxLev,2)+"×":"—"}</span></div>
+    <div class="r"><span class="k">Liquidation drop <small>tolerated</small></span><span class="v ${drop<0.05?'bad':drop<0.12?'warn':'good'}">${pct(drop*100,1)}</span></div>
+    <div class="r"><span class="k">Looped APY <small>@ borrow ${pct(bR,1)}</small></span><span class="v ${net>0?'good':'bad'}">${net!=null?pct(net,2):"—"}</span></div>`;}
+  if(!out)out=`<div class="k">Enable a role to see lender / looper impact.</div>`;
+  return out;
+}
+function computeCur(){
+  document.getElementById("oracleChart").innerHTML=oracleAllSVG();
+  // oracle status per collateral
+  const shock=+state.cur.scenario.shock||0;
+  const cols=state.reserves.filter(r=>r.collateral);
+  document.getElementById("oracleStatus").innerHTML= cols.length? cols.map(r=>{
+    const o=r.oracle,ref=+o.refPrice||1,lo=o.lowerBand>0?(o.lowerBand/ref-1)*100:null,hi=o.upperBand>0?(o.upperBand/ref-1)*100:null,liq=(r.ltv>0&&r.lltv>0)?-(1-r.ltv/r.lltv)*100:null;
+    const blocked=(lo!=null&&shock<=lo)||(hi!=null&&shock>=hi), liq2=(liq!=null&&shock<=liq);
+    return `<span><b class="b2">${esc(r.sym)}</b> @ ${shock>0?'+':''}${shock}% → oracle <span class="${blocked?'v bad':'v good'}">${blocked?'BLOCKED':'OK'}</span> · <span class="${liq2?'v bad':'v good'}">${liq2?'LIQUIDATED':'safe'}</span></span>`;
+  }).join("") : "";
+  document.getElementById("oracleMemo").innerHTML=`<b>Memo.</b> The <b>lower/upper bands</b> are Kamino price <b>sanity bounds</b> (heuristic <span class="mono">lower/upper</span>): a quote outside them is <b>rejected / frozen</b> — anti-manipulation &amp; flash-crash protection. Bands do <b>not</b> liquidate. Liquidation is independent: a genuine price fall (inside the bands) that pushes effective LTV past the <b>liq. threshold</b> triggers it (the orange lines). If price exits the lower band the oracle freezes the last valid price, which can <b>delay</b> liquidations rather than cause them — and a too-tight band blocks legitimate moves. The TWAP-divergence guard (bps) and max price age add further gating.`;
+  // per-card charts + gauges + impact
+  state.reserves.forEach((r,i)=>{
+    if(r.borrowable){const ch=document.querySelector(`[data-chart2="${i}"]`);if(ch)ch.innerHTML=chartSVG(r.irm,+state.global.takeRate||0,+r.override.u||0);}
+    if(r.collateral){const g=document.querySelector(`[data-gauge="${i}"]`);if(g){g.querySelector(".fill").style.width=r.lltv+"%";const mb=document.querySelector(`[data-mb="${i}"]`),ml=document.querySelector(`[data-ml="${i}"]`);if(mb)mb.style.left=r.ltv+"%";if(ml)ml.style.left=r.lltv+"%";}}
+    const im=document.querySelector(`[data-impact="${i}"]`);if(im)im.innerHTML=impactHTML(r);
+  });
 }
 function syncCur(){document.querySelectorAll("#pane-cur [data-p]").forEach(n=>{const v=gp(state,n.getAttribute("data-p"));if(n.tagName==="SELECT")n.value=v;else if(n.type==="range")n.value=(v==null?0:v);else n.value=(v==null?"":v);});}
-function renderCur(){renderChips();renderParams();syncCur();computeCur();}
+function renderCur(){renderCurCards();syncCur();computeCur();}
 
 /* ============================================================
    live loader (Tab 1 seed)
@@ -692,16 +646,15 @@ async function eqLoad(){
     state.reserves=cfgs.map(({c,m})=>newReserve(c.symbol||m.liquidityToken,{
       borrowable:c.borrowable, collateral:c.collateral,
       nativeYield:0, ltv:+(c.ltv||0).toFixed(0), lltv:+(c.lltv||0).toFixed(0),
-      liqBonus:+((c.liqBonusMax||c.liqBonusMin||5)).toFixed(1), borrowFactor:+(c.borrowFactor||100).toFixed(0),
+      liqBonus:+((c.liqBonusMax||c.liqBonusMin||5)).toFixed(1),
       depositCap:Math.round(c.depositCap||0), borrowCap:Math.round(c.borrowCap||0), utilCap:0,
       weight:c.borrowable?50:0, irm:c.borrowable?(c.irm.length?c.irm:[{u:0,r:1},{u:80,r:5},{u:100,r:20}]):[{u:0,r:1},{u:100,r:20}],
       price:c.price||1, live:true
     }));
     const mname=(window._markets||[]).find(x=>x.pk===mkt)?.name||"Market";
     state.global.takeRate=+(cfgs.find(x=>x.c.takeRate)?.c.takeRate||10).toFixed(1);
-    state.vault.name=mname+" vault";
-    state.books={vaultSupply:[{actor:"Seed liquidity",amount:10,minApy:0,status:"committed",note:"edit me"}],market:[]};
-    state.cur.selId=state.reserves[0].id;
+    state.market.name=mname;
+    state.books={supply:[{actor:"Seed liquidity",amount:10,minApy:0,status:"committed",note:"edit me"}],actors:[]};
     renderEq();renderCur();save();
     st.className="live-stat ok";st.textContent=`seeded ${state.reserves.length} reserves · ${mname}`;
   }catch(e){st.className="live-stat err";st.textContent="load failed: "+e.message;}
@@ -712,46 +665,37 @@ async function eqLoad(){
 ============================================================ */
 let _st=null;
 function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}const c=document.getElementById("saveChip");c.classList.add("show");clearTimeout(_st);_st=setTimeout(()=>c.classList.remove("show"),900);}
-function load(){try{const r=localStorage.getItem(KEY);if(r){const s=JSON.parse(r);if(s&&s.reserves&&s.cur&&s.global)state=s;}}catch(e){}}
+function load(){try{const r=localStorage.getItem(KEY);if(r){const s=JSON.parse(r);if(s&&s.reserves&&s.cur&&s.global&&s.market)state=s;}}catch(e){}}
 
 document.addEventListener("input",e=>{
   const n=e.target.closest("[data-p]");if(!n)return;
-  let v=n.value;if(n.classList.contains("num")||n.type==="range")v=(n.value===""?"":Number(n.value));
+  let v=n.value;if(n.classList.contains("num")||n.classList.contains("mono")&&n.tagName==="INPUT"&&n.getAttribute("inputmode")==="decimal"||n.type==="range")v=(n.value===""?"":Number(n.value));
   const p=n.getAttribute("data-p");sp(state,p,v);
   document.querySelectorAll('[data-p="'+p+'"]').forEach(o=>{if(o!==n&&String(o.value)!==String(n.value))o.value=n.value;});
-  if(n.closest("#pane-cur")){if(/\.sym$/.test(p))renderChips();computeCur();save();return;}
   if(/\.sym$/.test(p)){renderBooks();syncEq();}
-  computeEq();save();
+  computeEq();computeCur();save();
 });
 document.addEventListener("change",e=>{const s=e.target.closest("[data-stat]");if(s){const row=s.closest("[data-status]");if(row){row.dataset.status=s.value;computeEq();save();}}});
 
 document.addEventListener("click",e=>{
-  const b=e.target.closest("[data-act], [data-chip]");if(!b)return;
-  if(b.dataset.chip){state.cur.selId=b.dataset.chip;renderCur();save();return;}
+  const b=e.target.closest("[data-act]");if(!b)return;
   const a=b.dataset.act,ri=+b.dataset.ri,pi=+b.dataset.pi,i=+b.dataset.i;
-  // tab1
-  if(a==="addPt"){state.reserves[ri].irm.push({u:100,r:20});renderEq();renderCur();save();return;}
-  if(a==="delPt"){state.reserves[ri].irm.splice(pi,1);renderEq();renderCur();save();return;}
+  if(a==="addPt"||a==="curAddPt"){state.reserves[ri].irm.push({u:100,r:20});renderEq();renderCur();save();return;}
+  if(a==="delPt"||a==="curDelPt"){state.reserves[ri].irm.splice(pi,1);renderEq();renderCur();save();return;}
   if(a==="ovr"){state.reserves[ri].override.on=!state.reserves[ri].override.on;renderEq();save();return;}
   if(a==="tbor"){const r=state.reserves[ri];r.borrowable=!r.borrowable;if(r.borrowable&&(!r.irm||!r.irm.length))r.irm=[{u:0,r:1},{u:80,r:5},{u:100,r:20}];renderEq();renderCur();save();return;}
   if(a==="tcol"){const r=state.reserves[ri];r.collateral=!r.collateral;if(r.collateral&&r.ltv===0){r.ltv=70;r.lltv=75;}renderEq();renderCur();save();return;}
-  if(a==="delRes"){state.reserves.splice(ri,1);if(!state.reserves.find(x=>x.id===state.cur.selId))state.cur.selId=(state.reserves[0]||{}).id;renderEq();renderCur();save();return;}
-  if(a==="delVault"){state.books.vaultSupply.splice(i,1);renderEq();save();return;}
-  if(a==="delMkt"){state.books.market.splice(i,1);renderEq();save();return;}
-  // tab2
-  const sr=selReserve(), sri=sr?resIndex(sr.id):-1;
-  if(a==="curAddPt"&&sr){sr.irm.push({u:100,r:25});renderEq();renderCur();save();return;}
-  if(a==="curDelPt"&&sr){sr.irm.splice(pi,1);renderEq();renderCur();save();return;}
-  if(a==="tbor2"&&sr){sr.borrowable=!sr.borrowable;if(sr.borrowable&&(!sr.irm||!sr.irm.length))sr.irm=[{u:0,r:1},{u:80,r:5},{u:100,r:20}];renderEq();renderCur();save();return;}
-  if(a==="tcol2"&&sr){sr.collateral=!sr.collateral;if(sr.collateral&&sr.ltv===0){sr.ltv=70;sr.lltv=75;}renderEq();renderCur();save();return;}
+  if(a==="delRes"){state.reserves.splice(ri,1);renderEq();renderCur();save();return;}
+  if(a==="delSupply"){state.books.supply.splice(i,1);renderEq();save();return;}
+  if(a==="delActor"){state.books.actors.splice(i,1);renderEq();save();return;}
 });
 
-document.getElementById("addRes").onclick=()=>{const r=newReserve("NEW",{weight:0});state.reserves.push(r);renderEq();renderCur();save();};
-document.getElementById("addVault").onclick=()=>{state.books.vaultSupply.push({actor:"",amount:0,minApy:3,status:"scoping",note:""});renderEq();save();};
-document.getElementById("addMarket").onclick=()=>{const s=state.reserves[0]?.sym||"USDC";state.books.market.push({actor:"",supplyRes:s,supplyAmount:0,minApy:0,borrowRes:"—",borrowAmount:0,asked:8,status:"scoping",note:""});renderEq();save();};
+document.getElementById("addRes").onclick=()=>{state.reserves.push(newReserve("NEW",{weight:0}));renderEq();renderCur();save();};
+document.getElementById("addSupply").onclick=()=>{state.books.supply.push({actor:"",amount:0,minApy:3,status:"scoping",note:""});renderEq();save();};
+document.getElementById("addActor").onclick=()=>{const s=state.reserves[0]?.sym||"USDC";state.books.actors.push({actor:"",supplyRes:s,supplyAmount:0,minApy:0,borrowRes:"—",borrowAmount:0,asked:8,status:"scoping",note:""});renderEq();save();};
 document.getElementById("incToggle").onclick=()=>{state.global.incentiveOn=!state.global.incentiveOn;syncEq();computeEq();save();};
 document.getElementById("eqLoadBtn").onclick=eqLoad;
-document.getElementById("curCreate").onclick=()=>{const nm=document.getElementById("curNewName").value.trim()||"NEW";const r=newReserve(nm,{weight:0});state.reserves.push(r);state.cur.selId=r.id;document.getElementById("curNewName").value="";renderEq();renderCur();save();document.getElementById("curLiveStat").textContent="created "+nm;};
+document.getElementById("curCreate").onclick=()=>{const nm=document.getElementById("curNewName").value.trim()||"NEW";state.reserves.push(newReserve(nm,{weight:0}));document.getElementById("curNewName").value="";renderEq();renderCur();save();};
 
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{
   document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===t));
@@ -761,7 +705,7 @@ document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{
 document.getElementById("resetBtn").onclick=()=>{if(confirm("Reset everything to defaults?")){state=defaultState();renderEq();renderCur();save();}};
 document.getElementById("exportBtn").onclick=()=>{const b=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});const u=URL.createObjectURL(b);const a=document.createElement("a");a.href=u;a.download="obligate-config.json";a.click();setTimeout(()=>URL.revokeObjectURL(u),500);};
 document.getElementById("importBtn").onclick=()=>document.getElementById("importFile").click();
-document.getElementById("importFile").onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const s=JSON.parse(rd.result);if(s.reserves&&s.cur&&s.global){state=s;renderEq();renderCur();save();}else alert("Not an Obligate config.");}catch(err){alert("Invalid JSON.");}};rd.readAsText(f);e.target.value="";};
+document.getElementById("importFile").onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const s=JSON.parse(rd.result);if(s.reserves&&s.cur&&s.global&&s.market){state=s;renderEq();renderCur();save();}else alert("Not an Obligate config.");}catch(err){alert("Invalid JSON.");}};rd.readAsText(f);e.target.value="";};
 
 /* boot */
 load();
